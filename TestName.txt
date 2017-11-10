@@ -6,3 +6,10 @@ This is my master branch and develop.
 
 Hello
 
+select r.job_posting_id,r.worker_pay_type_id,wt.name as 'Worker pay type name',rc.currency 
+from job_posting_distribution_rate r
+inner join rate_code rc on rc.rate_code_id = r.rate_code_id
+inner join worker_pay_type wt on wt.worker_pay_type_id = r.worker_pay_type_id
+where job_posting_id = 'z17101618240157336339983'
+and supplier_code = 'HP01'
+and rc.currency = 'USD'
